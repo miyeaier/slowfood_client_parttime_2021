@@ -4,7 +4,7 @@ describe("Display list of products", () => {
   });
 
   it("is expected to see a header", () => {
-    cy.get("[data-cy=heard]").should("be.visible")
+    cy.get("[data-cy=header]").should("be.visible")
   });
 
 
