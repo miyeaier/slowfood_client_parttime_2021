@@ -1,0 +1,8 @@
+
+{
+  "products":[
+    {"id": "01", "name": "chicken wings", "price": "100"},
+    {"id": "02", "name": "halouli sticks", "price": "200"}
+    {"id": "03", "name": "chicken wrap", "price": "250"}
+  ]
+}
