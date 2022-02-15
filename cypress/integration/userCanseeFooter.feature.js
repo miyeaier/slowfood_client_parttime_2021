@@ -1,4 +1,3 @@
-import React from 'react'
 describe("interface", () => {
   beforeEach(() => {
     cy.intercept("GET", "**/api/products", {
@@ -9,6 +8,6 @@ describe("interface", () => {
   it("successfully renders", () => {
 
     cy.get("[data-cy=header]").should("contain", "Nordens");
-    cy.get("[data-cy=footer]").should("contain", `Slowfood ${React.version}`);
+    cy.get("[data-cy=footer]").should("contain", "Slowfood");
   });
 });

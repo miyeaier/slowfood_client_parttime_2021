@@ -10,13 +10,11 @@ footer {
   font-family: fantasy
 }
 
-.header {
-  background-image:
-    url("");
-  background-size:contain;
-  background-position: center;
-  background-attachment: fixed;
-  height: 100vh;
-  margin-top: -70px;
-  background-repeat: no-repeat;
+h1 {
+  text-align: center;
+}
+
+
+.list {
+  text-align: center;
 }
