@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { List } from "semantic-ui-react";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -14,9 +15,14 @@ const Products = () => {
   }, []);
 
   const productList = products.map((product) => {
-    return <li key={product.id}>{`${product.name} ${product.price}`} </li>;
+    return (
+      <List.Item key={product.id}>
+        {`${product.name} ${product.price}`}
+      </List.Item>
+    );
   });
-  return <ul id="products-list">{productList}</ul>;
+
+  return <List id="products-list">{productList}</List>;
 };
 
 export default Products;

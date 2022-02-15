@@ -9,7 +9,9 @@
     "axios": "^0.26.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "semantic-ui-css": "git+https://github.com/Semantic-Org/Semantic-UI-CSS.git",
+    "semantic-ui-react": "^2.1.1"
   },
   "scripts": {
     "start": "PORT=3000 react-scripts start",
