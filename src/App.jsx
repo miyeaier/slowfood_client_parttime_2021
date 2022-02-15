@@ -6,7 +6,7 @@ import { Container } from "semantic-ui-react";
 const App = () => {
   return (
     <Container>
-      <h1>Slowfood</h1>
+      <h1>Menu</h1>
       <Header />
       <div data-cy="products-list">
         <Products />

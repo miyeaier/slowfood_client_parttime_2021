@@ -15,6 +15,6 @@ describe("Display list of products", () => {
   });
 
   it("the list items display the expected content", () => {
-    cy.get("[data-cy=products-list]").first().should("contain", "cerulean");
+    cy.get("[data-cy=products-list]").first().should("contain", "chicken wings");
   });
 });
