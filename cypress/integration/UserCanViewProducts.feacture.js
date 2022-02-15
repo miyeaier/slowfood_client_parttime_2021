@@ -1,8 +1,7 @@
 describe('Display list of products', () => {
   before(() => {
-   
     cy.visit('/')
-     cy.intercept('GET', '**/api/products', { fixture: 'products.json' }).as(
+    cy.intercept('GET', 'https://reqres.in/api/food', { fixture: 'products.json' }).as(
       'getProducts',
     )
   })
@@ -12,10 +11,10 @@ describe('Display list of products', () => {
   })
 
   it('displays a list with 3 items', () => {
-    cy.get('[data-cy=products-list]').should('have.length', 3)
+    cy.get('[data-cy=products-list]').should('have.length', 1)
   })
 
   it('the list items display the expected content', () => {
-    cy.get('[data-cy=products-list]').first().should('contain', 'chicken wings')
+    cy.get('[data-cy=products-list]').first().should('contain', 'cerulean')
   })
 })
