@@ -1,5 +1,5 @@
 describe('Display list of products', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit('/')
     cy.intercept('GET', 'https://reqres.in/api/food', { fixture: 'products.json' }).as(
       'getProducts',
