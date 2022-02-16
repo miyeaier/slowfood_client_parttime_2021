@@ -1,5 +1,6 @@
 footer {
   position: absolute;
+  color: white;
   bottom: 0;
   width: 100%;
   height: 60px;
@@ -12,8 +13,7 @@ footer {
 
 h1 {
   text-align: center;
-
-
+  color: whitesmoke;
 }
 
 h3 {
@@ -39,11 +39,10 @@ h3 {
 .BackgroundImage {
   background-image:
     url("https://github.com/miyeaier/slowfood_client_parttime_2021/blob/view-products/image/menu.jpg?raw=true");
-  background-size: contain;
+  background-size: inherit;
   background-position: center;
   background-attachment: fixed;
   height: 100vh;
-  margin-top: -70px;
+  overflow: auto;
   background-repeat: no-repeat;
-
 }
