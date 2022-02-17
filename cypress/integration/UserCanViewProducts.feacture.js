@@ -22,6 +22,4 @@ describe("Display list of products", () => {
     cy.get("[data-cy=products-list]").first().should("contain", "Starter");
   });
 
-
-
 });

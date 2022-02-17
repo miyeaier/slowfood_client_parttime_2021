@@ -15,6 +15,7 @@ const Products = () => {
   }, []);
 
   const productList = products
+
   .sort((a,b) => a.category < b.category ? 1:-1)
   .map((product) => {
     return (
