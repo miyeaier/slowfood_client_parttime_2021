@@ -6,19 +6,19 @@ describe("Display list of products", () => {
     cy.visit("/");
   });
 
-  it.only("is expected to see a header", () => {
+  it("is expected to see a header", () => {
     cy.get("[data-cy=header]").should("be.visible");
   });
 
-  it("displays a list with 3 items", () => {
+  it("is expected to display a list with 3 items", () => {
     cy.get("[data-cy=products-list]").should("have.length", 1);
   });
 
-  it("the list items display the expected content", () => {
+  it("is expected to display the list items display the expected content", () => {
     cy.get("[data-cy=products-list]").first().should("contain", "Chicken wings");
   });
 
-  it("the list items display in the correct order", () => {
+  it("is expected that the list items display in the correct order", () => {
     cy.get("[data-cy=products-list]").first().should("contain", "Starter");
   });
 
