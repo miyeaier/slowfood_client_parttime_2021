@@ -4,20 +4,23 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
+    "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.1.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.4.0"
+    "axios": "^0.26.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-scripts": "3.4.0",
+    "semantic-ui-css": "git+https://github.com/Semantic-Org/Semantic-UI-CSS.git",
+    "semantic-ui-react": "^2.1.1"
   },
   "scripts": {
-    "start": "PORT=3001 react-scripts start",
+    "start": "PORT=3000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:silent": "PORT=3001 BROWSER=none react-scripts start",
+    "start:silent": "PORT=3000 BROWSER=none react-scripts start",
     "cy:open": "cypress open",
-    "cypress": "start-server-and-test start:silent http://localhost:3001/ cy:open"
+    "cypress": "start-server-and-test start:silent http://localhost:3000/ cy:open"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,10 +38,10 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^4.0.2",
+    "cypress": "^9.4.1",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "react-test-renderer": "^16.12.0",
-    "start-server-and-test": "^1.11.6"
+    "enzyme-adapter-react-16": "^1.15.6",
+    "react-test-renderer": "^16.14.0",
+    "start-server-and-test": "^1.14.0"
   }
 }

@@ -1,0 +1,8 @@
+
+{
+  "products":[
+    {"id": "01", "name": "chicken wings", "price": "100kr"},
+    {"id": "02", "name": "halouli sticks", "price": "200kr"},
+    {"id": "03", "name": "chicken wrap", "price": "250kr"}
+  ]
+}
