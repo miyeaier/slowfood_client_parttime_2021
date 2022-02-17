@@ -14,15 +14,19 @@ const Products = () => {
     fetchProducts();
   }, []);
 
-  const productList = products.map((product) => {
+  const productList = products
+  .sort((a,b) => a.category < b.category ? 1:-1)
+  .map((product) => {
     return (
       <List.Item key={product.id}>
-        {`${product.name} ${product.price}`}
+        {`${product.category}  -  ${product.name} ${product.price}` }
       </List.Item>
     );
-  });
 
+  });
   return <List id="products-list">{productList}</List>;
 };
+
+
 
 export default Products;
