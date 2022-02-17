@@ -6,7 +6,7 @@ describe("Display list of products", () => {
     cy.visit("/");
   });
 
-  it("is expected to see a header", () => {
+  it.only("is expected to see a header", () => {
     cy.get("[data-cy=header]").should("be.visible");
   });
 
