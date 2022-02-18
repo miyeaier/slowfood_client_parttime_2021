@@ -49,7 +49,7 @@ const Products = () => {
     productList.push(
       <List.Item key={product.id}>
         {`${product.name} ${product.price}`}
-        <button onClick={()=> addToOrder(product.id)}>Add to Order</button>
+        <button onClick={()=> addToOrder(product.id)}>+</button>
       </List.Item>
       
     );
