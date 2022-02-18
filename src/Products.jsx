@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { List } from "semantic-ui-react";
+import Orders from './Orders'
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -17,6 +18,24 @@ const Products = () => {
   const sortedProductList = products.sort((a, b) =>
   a.category < b.category ? 1 : -1
   );
+
+  const [order, setOrder] = useState([])
+  const [message, setMessage] = useState([])
+
+  const addToOrder = (id) => {
+    if(order) {
+      Orders.udpate(id, order.id).then(response => {
+        setMessage(response.message)
+        setOrder(response.order)
+
+      })
+    } else {
+    }
+    Orders.create(id, 99).then(response => {
+      setMessage(response.message)
+      setOrder(response.order)
+    })
+  }
   
   const productList = [];
   let prevCategory = "";
@@ -30,7 +49,9 @@ const Products = () => {
     productList.push(
       <List.Item key={product.id}>
         {`${product.name} ${product.price}`}
+        <button onClick={()=> addToOrder(product.id)}>Add to Order</button>
       </List.Item>
+      
     );
     prevCategory = product.category;
   }
