@@ -1,17 +1,17 @@
-describe("Display list of products", () => {
+describe("Order a product", () => {
     beforeEach(() => {
       cy.intercept("GET", "**/api/products", {
           fixture: "products.json",
       })
-      cy.intercept("POST", "**/api/orders", {
-        fixture: "orderCreateResponse.json",
+      cy.intercept("POST", "**/api/products", {
+        fixture: "order.json",
       }).as("Orders.create");
       cy.visit("/");
-      cy.get("[data-cy=product-list]")
+      cy.get("[data-cy=products-list]")
         .children()
-        .first()
+        .last()
         .within(() => {
-          cy.get("[data-cy=add-to-order-button]").click();
+          cy.get("[data-cy=order-button]").click();
         })
     });
     it("is expected to make a POST request", () => {

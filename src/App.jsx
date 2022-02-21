@@ -8,11 +8,9 @@ import { Container } from "semantic-ui-react";
 const App = () => {
   const [order, setOrder] = useState([])
 
-
-  
   return (
     <Container className="BackgroundImage">   <Header />
-      <div data-cy="products-list">
+      <div >
         <h3> Menu</h3>
         <Products />
       </div>
