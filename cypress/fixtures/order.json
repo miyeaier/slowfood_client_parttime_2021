@@ -1,0 +1,18 @@
+
+{
+    "order": {
+      "id": 1,
+      "user_id": 99,
+      "products": [
+        {
+          "id": 1,
+          "name": "Chicken wings",
+          "price": "100kr"
+          
+        }
+      ]
+    },
+    "message": "1 chicken wings was added to your order"
+  }
+
+
