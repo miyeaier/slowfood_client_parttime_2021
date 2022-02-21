@@ -6,7 +6,7 @@ const Orders = {
       params: { product_id: product_id },
     })
 
-    return data.order
+    return data
   },
 
   async update(product_id, order_id) {
