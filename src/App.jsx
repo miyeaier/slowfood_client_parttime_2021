@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Header from "./Header";
 import Products from "./Products";
-import Footer from "./footer";
+import Footer from "./Footer";
 import "./index.css";
 import { Container } from "semantic-ui-react";
 

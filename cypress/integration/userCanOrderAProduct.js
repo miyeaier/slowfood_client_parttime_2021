@@ -21,7 +21,7 @@ describe("Order a product", () => {
       it("is expected to respond with a message", () => {
         cy.get('#message-box').should(
           "contain.text",
-          "1 chicken wings was added to your order"
+          "1 avo salad was added to your order"
         );
     });
 })
