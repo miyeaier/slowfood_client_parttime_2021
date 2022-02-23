@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { List } from 'semantic-ui-react'
-import Orders from './Orders'
 import { ToastContainer, toast } from 'react-toastify'
 
 const Products = () => {
   const [products, setProducts] = useState([])
-  const [order, setOrder] = useState([])
-  const [message, setMessage] = useState('')
-  const notify = () => toast(message, { toastId: 'message-box' })
+  // const cart = () => { const [order,setOrder] = useState([])}
 
   const fetchProducts = async () => {
     const response = await axios.get('https://reqres.in/api/products')
@@ -28,20 +25,6 @@ const Products = () => {
       params: { product_id: id },
     })
     toast(response.data.message, { toastId: 'message-box' })
-    //debugger
-    // if (order.length !== 0) {
-    //   await Orders.update(id, order.id).then((response) => {
-    //     setMessage(response.message)
-    //     setOrder(response.order)
-    //   })
-    // } else {
-    //   await Orders.create(id, 99).then((response) => {
-    //     setMessage(response.message)
-    //     setOrder(response.order)
-    //     debugger
-    //   })
-    // }
-    notify()
   }
 
   const productList = []

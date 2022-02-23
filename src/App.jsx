@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Header from "./Header";
 import Products from "./Products";
 import Footer from "./Footer";
@@ -9,7 +9,7 @@ const App = () => {
 
   return (
     <Container className="BackgroundImage">   <Header />
-      <div >
+      <div>
         <h3> Menu</h3>
         <Products />
       </div>
