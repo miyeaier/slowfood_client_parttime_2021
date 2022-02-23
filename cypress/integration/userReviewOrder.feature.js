@@ -4,7 +4,7 @@ describe("Display products in order", () => {
       fixture: "products.json",
     }).as("getProducts");
     cy.intercept("GET", "**/api/orders/**", {
-      fixture: "order.json",
+      fixture: "orderReview.json",
     }).as("getOrder");
     cy.visit("/");
   });
