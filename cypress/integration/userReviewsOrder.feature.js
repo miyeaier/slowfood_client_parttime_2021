@@ -10,7 +10,7 @@ describe("Display products in order", () => {
   });
 
   describe("successfully", () => {
-    it("is expected to show a list of products", () => {
+    it.only("is expected to show a list of products", () => {
       cy.get("[data-cy=show-order]").click();
       cy.get("[data-cy=order-list]").children().should("have.length", 3);
     });
