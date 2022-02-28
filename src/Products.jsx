@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Container, List } from "semantic-ui-react";
+import { Containter, List } from "semantic-ui-react";
+import { ToastContainer, toast } from "react-toastify";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+  // const cart = () => { const [order,setOrder] = useState([])}
 
   const fetchProducts = async () => {
     const response = await axios.get("https://reqres.in/api/products");
@@ -14,13 +16,20 @@ const Products = () => {
     fetchProducts();
   }, []);
 
-  const sortedProductList = products.sort((a, b) =>
+  const sortedProductList = products?.sort((a, b) =>
     a.category < b.category ? 1 : -1
   );
 
+  const addToOrder = async (id) => {
+    const response = await axios.post("https://reqres.in/api/orders", {
+      params: { product_id: id },
+    });
+    toast(response.data.message, { toastId: "message-box" });
+  };
+
   const productList = [];
   let prevCategory = "";
-  for (let i = 0; i < sortedProductList.length; i++) {
+  for (let i = 0; i < sortedProductList?.length; i++) {
     let product = sortedProductList[i];
 
     if (product.category !== prevCategory) {
@@ -31,18 +40,25 @@ const Products = () => {
 
     productList.push(
       <List.Item key={product.id}>
-        {`${product.name} ${product.price}`}
+        {`${product.name} ${product.price}      `}
+        <button data-cy="order-button" onClick={() => addToOrder(product.id)}>
+          {" "}
+          Order +
+        </button>
       </List.Item>
     );
     prevCategory = product.category;
   }
 
   return (
-    <Container>
-      <List inverted id="products-list">
-        {productList}
-      </List>
-    </Container>
+    <>
+      <Container>
+        <List inverted id="products-list">
+          {productList}
+        </List>
+      </Container>
+      <ToastContainer data-cy="message-box" />
+    </>
   );
 };
 

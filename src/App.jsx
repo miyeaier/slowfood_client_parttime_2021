@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "./Header";
 import Products from "./Products";
-import Footer from "./footer";
-import ReviewOrder from "./ReviewOrder";
+import Footer from "./Footer";
+import "./index.css";
 import { Container } from "semantic-ui-react";
 
 const App = () => {
