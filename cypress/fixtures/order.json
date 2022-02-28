@@ -1,0 +1,13 @@
+{
+  "order": {
+    "id": 6,
+    "products": [
+      {
+        "id": 1,
+        "name": "Avo salad",
+        "price": "300kr"
+      }
+    ]
+  },
+  "message": "1 avo salad was added to your order"
+}

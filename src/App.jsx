@@ -1,14 +1,15 @@
-import React from "react";
+import React from 'react';
 import Header from "./Header";
 import Products from "./Products";
-import Footer from "./footer";
+import Footer from "./Footer";
 import "./index.css";
 import { Container } from "semantic-ui-react";
 
 const App = () => {
+
   return (
     <Container className="BackgroundImage">   <Header />
-      <div data-cy="products-list">
+      <div>
         <h3> Menu</h3>
         <Products />
       </div>
