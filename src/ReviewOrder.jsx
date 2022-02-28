@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Button, Modal, List } from "semantic-ui-react";
+import { Button, Modal, List, Container } from "semantic-ui-react";
 
 const ReviewOrder = () => {
   const [open, setOpen] = useState(false);
-  const [order, setOrder] = useState([]);
+  const [order, setOrder] = useState({});
 
   const fetchOrder = async () => {
     const response = await axios.get("https://reqres.in/api/orders/5");
-    setOrder(response.data.order.products);
+    setOrder(response.data.order);
   };
 
-  const orderList = order.map((product) => {
+  const orderList = order.products?.map((product) => {
     return <List.Item key={product.id}>{product.name}</List.Item>;
   });
 
@@ -30,6 +30,9 @@ const ReviewOrder = () => {
       <Modal.Content>
         <List data-cy="order-list">{orderList}</List>
       </Modal.Content>
+      <Modal.Actions>
+        <Container data-cy="total-cost"> Total {order.total}kr</Container>
+      </Modal.Actions>
     </Modal>
   );
 };

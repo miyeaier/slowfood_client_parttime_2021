@@ -26,5 +26,9 @@ describe("Display products in order", () => {
           cy.contains("Avo salad").should("be.visible");
         });
     });
+
+    it('is expected to include total cost', () => {
+      cy.get("[data-cy=total-cost]").should("contain", "750")
+    });
   });
 });
