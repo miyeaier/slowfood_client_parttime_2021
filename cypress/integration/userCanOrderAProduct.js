@@ -3,7 +3,7 @@ describe("Order a product", () => {
       cy.intercept("GET", "**/api/products", {
           fixture: "products.json",
       })
-      cy.intercept("POST", "**/api/products", {
+      cy.intercept("POST", "**/api/orders", {
         fixture: "order.json",
       }).as("Orders.create");
       cy.visit("/");
