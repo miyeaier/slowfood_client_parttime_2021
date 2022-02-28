@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Container, List } from "semantic-ui-react";
+import { Container, List,Popup,Icon } from "semantic-ui-react";
 import { ToastContainer, toast } from "react-toastify";
 
 const Products = () => {
@@ -40,11 +40,17 @@ const Products = () => {
 
     productList.push(
       <List.Item key={product.id}>
-        {`${product.name} ${product.price}      `}
+       
         <button data-cy="order-button" onClick={() => addToOrder(product.id)}>
-          {" "}
-          Order +
+        <Popup
+          trigger={<Icon name='heart' color='red' size='large' circular />}
+          content='order here'
+          position='top right'
+        />
+            {" "}
         </button>
+        {`${product.name} ${product.price}      `}
+        
       </List.Item>
     );
     prevCategory = product.category;
