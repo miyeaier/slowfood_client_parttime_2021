@@ -5,7 +5,6 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  // const cart = () => { const [order,setOrder] = useState([])}
 
   const fetchProducts = async () => {
     const response = await axios.get("https://reqres.in/api/products");
@@ -25,6 +24,7 @@ const Products = () => {
       params: { product_id: id },
     });
     toast(response.data.message, { toastId: "message-box" });
+    // Need to save order ID here
   };
 
   const productList = [];
