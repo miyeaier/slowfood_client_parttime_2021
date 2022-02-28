@@ -9,13 +9,14 @@ import { Container } from "semantic-ui-react";
 const App = () => {
   return (
     <>
-      <Header />
-      <div className="BackgroundImage" data-cy="products-list">
-        <h3> Menu</h3>
-        <Products />
-      </div>
-      <ReviewOrder />
-      <Footer />
+    <div data-cy="products-list" className="BackgroundImage" >
+       <Header />
+       <h2> Menu</h2>
+       <Products />
+       <ReviewOrder />
+       </div>
+       
+       <Footer />
     </>
   );
 };
