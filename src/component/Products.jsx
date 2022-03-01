@@ -40,7 +40,7 @@ const Products = () => {
 
     productList.push(
       <List.Item key={product.id}>
-        <button data-cy="order-button" onClick={() => addToOrder(product.id)} class="ui button">
+        <button data-cy="order-button" onClick={() => addToOrder(product.id)} className="ui button">
         order +
         </button>
         {`${product.name} ${product.price}      `}
