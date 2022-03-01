@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Container, List, Popup, Icon } from "semantic-ui-react";
+import { Container, List } from "semantic-ui-react";
 import { ToastContainer, toast } from "react-toastify";
 
 const Products = () => {

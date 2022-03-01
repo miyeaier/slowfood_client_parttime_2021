@@ -4,7 +4,6 @@ import Products from "./component/Products";
 import Footer from "./component/Footer";
 import ReviewOrder from "./component/ReviewOrder";
 import "./index.css";
-import { Container } from "semantic-ui-react";
 
 const App = () => {
   return (
