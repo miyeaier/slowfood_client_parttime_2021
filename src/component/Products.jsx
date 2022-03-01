@@ -40,12 +40,8 @@ const Products = () => {
 
     productList.push(
       <List.Item key={product.id}>
-        <button data-cy="order-button" onClick={() => addToOrder(product.id)}>
-          <Popup
-            trigger={<Icon name="heart" color="White" circular />}
-            content="order here"
-            position="top right"
-          />{" "}
+        <button data-cy="order-button" onClick={() => addToOrder(product.id)} class="ui button">
+        order +
         </button>
         {`${product.name} ${product.price}      `}
       </List.Item>
