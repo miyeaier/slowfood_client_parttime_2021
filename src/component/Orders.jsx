@@ -1,4 +1,4 @@
-import { api } from './network.js'
+import { api } from '../network.js'
 
 const Orders = {
   async create(product_id) {

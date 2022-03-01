@@ -1,5 +1,4 @@
 import React from "react";
-import "./index.css";
 import { Icon } from "semantic-ui-react";
 
 const Header = () => {

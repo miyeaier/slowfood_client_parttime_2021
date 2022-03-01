@@ -1,0 +1,25 @@
+{
+  "order": {
+    "id": 5,
+    "total": "750",
+    "products": [{
+        "id": 2,
+        "name": "Halouli sticks",
+        "price": "200kr",
+        "category": "Side"
+      },
+      {
+        "id": 3,
+        "name": "Chicken wrap",
+        "price": "250kr",
+        "category": "Main"
+      },
+      {
+        "id": 6,
+        "name": "Avo salad",
+        "price": "300kr",
+        "category": "Starter"
+      }
+    ]
+  }
+}

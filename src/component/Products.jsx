@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { List } from "semantic-ui-react";
+import { Container, List } from "semantic-ui-react";
 import { ToastContainer, toast } from "react-toastify";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  // const cart = () => { const [order,setOrder] = useState([])}
 
   const fetchProducts = async () => {
     const response = await axios.get("https://reqres.in/api/products");
@@ -25,6 +24,7 @@ const Products = () => {
       params: { product_id: id },
     });
     toast(response.data.message, { toastId: "message-box" });
+    // Need to save order ID here
   };
 
   const productList = [];
@@ -33,16 +33,17 @@ const Products = () => {
     let product = sortedProductList[i];
 
     if (product.category !== prevCategory) {
-      productList.push(<List.Header key={product.category}>{product.category}</List.Header>);
+      productList.push(
+        <List.Header key={product.category}>{product.category}</List.Header>
+      );
     }
 
     productList.push(
       <List.Item key={product.id}>
-        {`${product.name} ${product.price}      `}
-        <button data-cy="order-button" onClick={() => addToOrder(product.id)}>
-          {" "}
-          Order +
+        <button data-cy="order-button" onClick={() => addToOrder(product.id)} className="ui button">
+        order +
         </button>
+        {`${product.name} ${product.price}      `}
       </List.Item>
     );
     prevCategory = product.category;
@@ -50,7 +51,11 @@ const Products = () => {
 
   return (
     <>
-      <List data-cy="products-list">{productList} </List>
+      <Container>
+        <List inverted id="products-list" size="big">
+          {productList}
+        </List>
+      </Container>
       <ToastContainer data-cy="message-box" />
     </>
   );

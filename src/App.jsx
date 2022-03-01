@@ -1,20 +1,22 @@
-import React from 'react';
-import Header from "./Header";
-import Products from "./Products";
-import Footer from "./Footer";
+import React from "react";
+import Header from "./component/Header";
+import Products from "./component/Products";
+import Footer from "./component/Footer";
+import ReviewOrder from "./component/ReviewOrder";
 import "./index.css";
-import { Container } from "semantic-ui-react";
 
 const App = () => {
-
   return (
-    <Container className="BackgroundImage">   <Header />
-      <div>
-        <h3> Menu</h3>
-        <Products />
-      </div>
-      <Footer />
-    </Container>
+    <>
+    <div data-cy="products-list" className="BackgroundImage" >
+       <Header />
+       <h2> Menu</h2>
+       <Products />
+       <ReviewOrder />
+       </div>
+       
+       <Footer />
+    </>
   );
 };
 
