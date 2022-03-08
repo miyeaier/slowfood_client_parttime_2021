@@ -11,6 +11,7 @@ describe("Display products in order", () => {
         fixture: "orderReview.json",
       }).as("getOrder");
       cy.visit("/");
+      cy.get("[data-cy=order-button]").last().click();
       cy.get("[data-cy=show-order]").click();
     });
 
